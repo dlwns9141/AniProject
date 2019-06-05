@@ -11,8 +11,10 @@
         lg4
       >
         <material-card>
-          <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
-          </v-img>
+          <v-flex>
+              <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+              </v-img>
+          </v-flex>
           <h4 class="title font-weight-light">Daily Sales</h4>
           <p class="category d-inline-flex font-weight-light">
             <v-icon
@@ -41,8 +43,10 @@
         lg4
       >
         <material-card>
-          <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
-          </v-img>
+          <v-flex>
+              <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+              </v-img>
+          </v-flex>
           <h4 class="title font-weight-light">Daily Sales</h4>
           <p class="category d-inline-flex font-weight-light">
             <v-icon
@@ -71,8 +75,10 @@
         lg4
       >
         <material-card>
-          <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
-          </v-img>
+          <v-flex>
+              <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+              </v-img>
+          </v-flex>
           <h4 class="title font-weight-light">Daily Sales</h4>
           <p class="category d-inline-flex font-weight-light">
             <v-icon
