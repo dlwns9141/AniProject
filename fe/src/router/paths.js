@@ -20,20 +20,8 @@ export default [
     view: 'TableList'
   },
   {
-    path: '/typography',
-    view: 'Typography'
-  },
-  {
-    path: '/icons',
-    view: 'Icons'
-  },
-  {
     path: '/maps',
     view: 'Maps'
-  },
-  {
-    path: '/notifications',
-    view: 'Notifications'
   },
   {
     path: '/upgrade',
