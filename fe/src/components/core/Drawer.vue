@@ -93,11 +93,6 @@ export default {
         text: 'Dashboard'
       },
       {
-        to: '/user-profile',
-        icon: 'mdi-account',
-        text: 'User Profile'
-      },
-      {
         to: '/table-list',
         icon: 'mdi-clipboard-outline',
         text: 'Table List'
