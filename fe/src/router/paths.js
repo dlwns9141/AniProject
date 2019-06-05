@@ -17,10 +17,5 @@ export default [
   {
     path: '/maps',
     view: 'Maps'
-  },
-  {
-    path: '/upgrade',
-    name: 'Upgrade to PRO',
-    view: 'Upgrade'
   }
 ]
