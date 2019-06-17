@@ -35,15 +35,6 @@
         </v-list-tile>
         <v-divider/>
         <v-list-tile
-          v-if="responsive"
-        >
-          <v-text-field
-            class="purple-input search-input"
-            label="Search..."
-            color="purple"
-          />
-        </v-list-tile>
-        <v-list-tile
           v-for="(link, i) in links"
           :key="i"
           :to="link.to"
@@ -58,6 +49,31 @@
             v-text="link.text"
           />
         </v-list-tile>
+        <v-card>
+          <v-card-text>
+            <v-subheader class="pa-0">Where do you live?</v-subheader>
+            <v-autocomplete
+              v-model="selected"
+              :hint="!isEditing ? 'Click the icon to edit' : 'Click the icon to save'"
+              :items="states"
+              :readonly="!isEditing"
+              :label="`State — ${isEditing ? 'Editable' : 'Readonly'}`"
+              persistent-hint
+              prepend-icon="mdi-city"
+            >
+              <template v-slot:append-outer>
+                <v-slide-x-reverse-transition mode="out-in">
+                  <v-icon
+                    :key="`icon-${isEditing}`"
+                    :color="isEditing ? 'success' : 'info'"
+                    @click="isEditing = !isEditing"
+                    v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
+                  ></v-icon>
+                </v-slide-x-reverse-transition>
+              </template>
+            </v-autocomplete>
+          </v-card-text>
+        </v-card>
       </v-layout>
     </v-img>
   </v-navigation-drawer>
@@ -90,7 +106,12 @@ export default {
         text: 'Maps'
       }
     ],
-    responsive: false
+    responsive: false,
+    isEditing: false,
+    model: null,
+    states: [
+      'Dashboard','Maps','TableList'
+    ]
   }),
   computed: {
     ...mapState('app', ['image', 'color']),

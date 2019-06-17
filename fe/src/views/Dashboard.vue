@@ -47,7 +47,7 @@
               <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
               </v-img>
           </v-flex>
-          <h4 class="title font-weight-light">Daily Sales</h4>
+          <h4 class="title font-weight-light">여행지</h4>
           <p class="category d-inline-flex font-weight-light">
             <v-icon
               color="green"
@@ -79,7 +79,7 @@
               <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
               </v-img>
           </v-flex>
-          <h4 class="title font-weight-light">Daily Sales</h4>
+          <h4 class="title font-weight-light">여행지</h4>
           <p class="category d-inline-flex font-weight-light">
             <v-icon
               color="green"
@@ -101,10 +101,7 @@
           </template>
         </material-card>
       </v-flex>
-      <v-flex
-        md12
-        lg6
-      >
+      <v-flex>
         <material-card
           color="orange"
           title="Employee Stats"
