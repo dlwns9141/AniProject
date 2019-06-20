@@ -51,23 +51,20 @@
         </v-list-tile>
         <v-card>
           <v-card-text>
-            <v-subheader class="pa-0">Where do you live?</v-subheader>
             <v-autocomplete
               v-model="selected"
-              :hint="!isEditing ? 'Click the icon to edit' : 'Click the icon to save'"
-              :items="states"
-              :readonly="!isEditing"
-              :label="`State — ${isEditing ? 'Editable' : 'Readonly'}`"
+              :hint="'Serach Course'"
+              :items="pages"
+              :label="`Course`"
               persistent-hint
-              prepend-icon="mdi-city"
+              prepend-icon="mdi-airplane"
+
             >
               <template v-slot:append-outer>
                 <v-slide-x-reverse-transition mode="out-in">
                   <v-icon
-                    :key="`icon-${isEditing}`"
-                    :color="isEditing ? 'success' : 'info'"
-                    @click="isEditing = !isEditing"
-                    v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
+                    :color="'success'"
+                    v-text="'mdi-circle-edit-outline'"
                   ></v-icon>
                 </v-slide-x-reverse-transition>
               </template>
@@ -107,11 +104,11 @@ export default {
       }
     ],
     responsive: false,
-    isEditing: false,
     model: null,
-    states: [
-      'Dashboard','Maps','TableList'
-    ]
+    pages: [
+      'dashboard','Maps','table-list'
+    ],
+    selected: 'Dashboard'
   }),
   computed: {
     ...mapState('app', ['image', 'color']),
@@ -130,6 +127,13 @@ export default {
       return `${this.$store.state.app.sidebarBackgroundColor}, ${this.$store.state.app.sidebarBackgroundColor}`
     }
   },
+
+  watch: {
+       selected (selected) {
+         console.log(selected);
+         this.$router.push('/'+selected);
+       }
+     },
   mounted () {
     this.onResponsiveInverted()
     window.addEventListener('resize', this.onResponsiveInverted)
